@@ -83,12 +83,6 @@ Kitchen menangani pesanan:
 
 ---
 
-## 📸 Preview Tampilan
-
-
-
----
-
 ## ⚙️ Cara Install & Menjalankan Project
 
 ### 1. Clone Repository
