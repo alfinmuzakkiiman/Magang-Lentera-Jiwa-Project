@@ -102,6 +102,7 @@
                                 <th>Nama Menu</th>
                                 <th>Kategori Menu</th>
                                 <th>Harga</th>
+                                <th>Stock</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -120,6 +121,7 @@
                                 <td>{{ $menu->nama_menu }}</td>
                                 <td>{{ $menu->kategori }}</td>
                                 <td>Rp. {{ number_format($menu->harga) }}</td>
+                                <td>{{ $menu->stock }}</td>
 
                                 <td>
                                     <div class="d-flex justify-content-end gap-1">

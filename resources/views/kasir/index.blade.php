@@ -60,6 +60,13 @@
             <div class="col-md-7">
                 <h2 class="text-dark fw-bold mb-4">Selamat {{ $waktu }} {{ auth()->user()->name }}</h2>
 
+                @if(session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
                 <ul class="nav nav-pills gap-1 pb-3 mb-4 border-bottom" id="kategoriTab">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" data-kategori="semua">Semua</a>
@@ -91,11 +98,11 @@
                                             </div>
                                         @endif
                                         <h4 class="card-title mt-4 mb-2">{{ $menu->nama_menu }}</h4>
-                                        <div
-                                            class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-1">
-                                            <p class="mb-0 text-secondary fs-7">{{ $menu->kategori }}</p>
-                                            <p class="mb-0 text-primary fw-semibold">Rp. {{ number_format($menu->harga) }}</p>
-                                        </div>
+                                        <p class="mb-0 fs-7 d-flex align-items-center gap-2">
+                                            <span class="text-secondary">{{ $menu->kategori }}</span>
+                                            <span class="text-secondary">{{ $menu->stock }}</span>
+                                            <span class="text-primary fw-semibold text-nowrap">Rp. {{ number_format($menu->harga) }}</span>
+                                        </p>
                                     </div>
                                 </div>
                             </button>

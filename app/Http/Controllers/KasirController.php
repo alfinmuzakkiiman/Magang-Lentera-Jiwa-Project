@@ -45,6 +45,11 @@ class KasirController extends Controller
         $menu = Menu::findOrFail($id);
         $cart = session()->get('cart', []);
 
+        $currentQty = isset($cart[$id]) ? $cart[$id]['qty'] : 0;
+        if ($currentQty >= $menu->stock) {
+            return back()->with('error', 'Stok tidak mencukupi!');
+        }
+
         if (isset($cart[$id])) {
             $cart[$id]['qty']++;
         } else {
@@ -73,6 +78,10 @@ class KasirController extends Controller
         }
 
         if ($request->type == 'plus') {
+            $menu = Menu::findOrFail($id);
+            if ($cart[$id]['qty'] >= $menu->stock) {
+                return back()->with('error', 'Stok tidak mencukupi!');
+            }
             $cart[$id]['qty']++;
         } else {
             $cart[$id]['qty']--;
@@ -146,6 +155,12 @@ class KasirController extends Controller
                 'harga'    => $item['harga'],
                 'subtotal' => $item['harga'] * $item['qty'],
             ]);
+
+            // Kurangi stok menu
+            $menu = Menu::find($menuId);
+            if ($menu) {
+                $menu->decrement('stock', $item['qty']);
+            }
         }
 
         // 3. Simpan ke tabel pendapatans

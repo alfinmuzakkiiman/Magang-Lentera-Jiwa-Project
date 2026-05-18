@@ -57,6 +57,11 @@
                     </div>
 
                     <div class="mb-3">
+                        <label>Stock</label>
+                        <input type="number" name="stock" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
                         <label>Gambar</label>
                         <input type="file" name="gambar" class="form-control">
                     </div>

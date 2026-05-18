@@ -24,6 +24,7 @@ class MenuController extends Controller
             'nama_menu' => 'required',
             'kategori' => 'required',
             'harga' => 'required|numeric',
+            'stock' => 'required|integer|min:0',
             'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
         ]);
 
@@ -52,6 +53,7 @@ class MenuController extends Controller
             'nama_menu' => 'required',
             'kategori' => 'required',
             'harga' => 'required|numeric',
+            'stock' => 'required|integer|min:0',
             'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
         ]);
 

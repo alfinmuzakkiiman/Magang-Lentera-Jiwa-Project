@@ -109,6 +109,13 @@
                             value="{{ $menu->harga }}" required>
                     </div>
 
+                    <!-- STOCK -->
+                    <div class="mb-3">
+                        <label>Stock</label>
+                        <input type="number" name="stock" class="form-control"
+                            value="{{ $menu->stock }}" required>
+                    </div>
+
                     <!-- GAMBAR -->
                     <div class="mb-3">
                         <label>Gambar (opsional)</label>
