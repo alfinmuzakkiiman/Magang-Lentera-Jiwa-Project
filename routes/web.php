@@ -60,6 +60,9 @@ Route::middleware('auth')->group(function(){
         // 2. Menu Management
         Route::resource('menu', MenuController::class);
 
+        // Kategori Management
+        Route::resource('kategori', \App\Http\Controllers\KategoriController::class);
+
         // 3. Pendapatan (Riwayat Transaksi)
         Route::resource('pendapatan', PendapatanController::class)->only(['index', 'show']);
 

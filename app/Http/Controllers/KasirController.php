@@ -17,6 +17,7 @@ class KasirController extends Controller
     public function index()
     {
         $menus = Menu::all();
+        $kategoris = \App\Models\Kategori::all();
         $cart = session()->get('cart', []);
 
         // Buat dan simpan kode pesanan sementara ke session jika belum ada
@@ -34,7 +35,7 @@ class KasirController extends Controller
         $pajak = round($subtotal * 0.11);
         $total = $subtotal + $pajak;
 
-        return view('kasir.index', compact('menus', 'cart', 'subtotal', 'pajak', 'total', 'kode_pesanan'));
+        return view('kasir.index', compact('menus', 'kategoris', 'cart', 'subtotal', 'pajak', 'total', 'kode_pesanan'));
     }
 
     /**

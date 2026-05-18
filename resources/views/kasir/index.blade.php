@@ -71,15 +71,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" data-kategori="semua">Semua</a>
                     </li>
+                    @foreach($kategoris as $kategori)
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-kategori="Makanan">Makanan</a>
+                        <a class="nav-link" href="#" data-kategori="{{ $kategori->nama_kategori }}">{{ $kategori->nama_kategori }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-kategori="Minuman">Minuman</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-kategori="Snack">Snack</a>
-                    </li>
+                    @endforeach
                 </ul>
 
                 <div class="row g-3">

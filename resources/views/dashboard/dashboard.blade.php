@@ -36,6 +36,11 @@
                         </a>                     
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('kategori.index') }}" class="nav-link px-4">
+                            <i class="bx bx-category"></i> Kategori
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('pendapatan.index') }}" class="nav-link px-4">
                             <i class="bx bx-money"></i> Pendapatan
                         </a>

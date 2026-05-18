@@ -15,7 +15,8 @@ class MenuController extends Controller
 
     public function create()
     {
-        return view('menu.create');
+        $kategoris = \App\Models\Kategori::all();
+        return view('menu.create', compact('kategoris'));
     }
 
     public function store(Request $request)
@@ -25,7 +26,7 @@ class MenuController extends Controller
             'kategori' => 'required',
             'harga' => 'required|numeric',
             'stock' => 'required|integer|min:0',
-            'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
+            'gambar' => 'nullable|image|mimes:jpg,png,jpeg,webp|max:2048'
         ]);
 
         // upload gambar (optional)
@@ -42,7 +43,8 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
-        return view('menu.edit', compact('menu'));
+        $kategoris = \App\Models\Kategori::all();
+        return view('menu.edit', compact('menu', 'kategoris'));
     }
 
     public function update(Request $request, $id)
@@ -54,7 +56,7 @@ class MenuController extends Controller
             'kategori' => 'required',
             'harga' => 'required|numeric',
             'stock' => 'required|integer|min:0',
-            'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
+            'gambar' => 'nullable|image|mimes:jpg,png,jpeg,webp|max:2048'
         ]);
 
         // upload gambar baru

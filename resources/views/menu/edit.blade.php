@@ -40,6 +40,11 @@
                             <i class="bx bx-food-menu"></i> Menu
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('kategori.index') }}" class="nav-link px-4">
+                            <i class="bx bx-category"></i> Kategori
+                        </a>
+                    </li>
 
                     <li class="nav-item">
                         <a href="#" class="nav-link px-4">
@@ -96,9 +101,9 @@
                     <div class="mb-3">
                         <label>Kategori</label>
                         <select name="kategori" class="form-select">
-                            <option value="Makanan" {{ $menu->kategori == 'Makanan' ? 'selected' : '' }}>Makanan</option>
-                            <option value="Minuman" {{ $menu->kategori == 'Minuman' ? 'selected' : '' }}>Minuman</option>
-                            <option value="Snack" {{ $menu->kategori == 'Snack' ? 'selected' : '' }}>Snack</option>
+                            @foreach($kategoris as $kat)
+                                <option value="{{ $kat->nama_kategori }}" {{ $menu->kategori == $kat->nama_kategori ? 'selected' : '' }}>{{ $kat->nama_kategori }}</option>
+                            @endforeach
                         </select>
                     </div>
 
