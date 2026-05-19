@@ -22,11 +22,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto gap-2">
+                    @if(auth()->user()->role === 'admin')
                     <li class="nav-item">
                         <a href="{{ route('dashboard') }}" class="nav-link px-4">
                             <i class="bx bxs-dashboard"></i> Dashboard
                         </a>
                     </li>
+                    @endif
+                    @if(auth()->user()->role === 'kitchen')
+                    <li class="nav-item">
+                        <a href="{{ route('kitchen.index') }}" class="nav-link px-4">
+                            <i class="bx bx-home"></i> Beranda Dapur
+                        </a>
+                    </li>
+                    @endif
                     <li class="nav-item">
                         <a href="{{ route('menu.index') }}" class="nav-link px-4">
                             <i class="bx bx-food-menu"></i> Menu
@@ -37,6 +46,7 @@
                             <i class="bx bx-category"></i> Kategori
                         </a>
                     </li>
+                    @if(auth()->user()->role === 'admin')
                     <li class="nav-item">
                         <a href="{{ route('pendapatan.index') }}" class="nav-link px-4">
                             <i class="bx bx-money"></i> Pendapatan
@@ -47,6 +57,7 @@
                             <i class="bx bx-user-pin"></i> Kasir
                         </a>
                     </li>
+                    @endif
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">

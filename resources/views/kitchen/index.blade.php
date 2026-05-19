@@ -23,8 +23,26 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mx-auto gap-2">
+                    <li class="nav-item">
+                        <a href="{{ route('kitchen.index') }}" class="nav-link px-4 active">
+                            <i class="bx bx-home"></i> Beranda Dapur
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('menu.index') }}" class="nav-link px-4">
+                            <i class="bx bx-food-menu"></i> Menu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('kategori.index') }}" class="nav-link px-4">
+                            <i class="bx bx-category"></i> Kategori
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">

@@ -57,11 +57,22 @@ Route::middleware('auth')->group(function(){
         // 1. Dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | SHARED ADMIN & KITCHEN
+    |--------------------------------------------------------------------------
+    */
+    Route::middleware('role:admin,kitchen')->group(function () {
         // 2. Menu Management
         Route::resource('menu', MenuController::class);
 
         // Kategori Management
         Route::resource('kategori', \App\Http\Controllers\KategoriController::class);
+    });
+
+    Route::middleware('role:admin')->group(function () {
 
         // 3. Pendapatan (Riwayat Transaksi)
         Route::resource('pendapatan', PendapatanController::class)->only(['index', 'show']);

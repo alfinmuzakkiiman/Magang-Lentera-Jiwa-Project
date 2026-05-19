@@ -21,59 +21,7 @@
                 <img src="{{ asset('assets/images/logo.png') }}" alt=""> KasirOnlen
             </a>
 
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav mx-auto gap-2">
-
-                    <li class="nav-item">
-                        <a href="/dashboard" class="nav-link px-4">
-                            <i class="bx bxs-dashboard"></i> Dashboard
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/menu" class="nav-link px-4 active">
-                            <i class="bx bx-food-menu"></i> Menu
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('kategori.index') }}" class="nav-link px-4">
-                            <i class="bx bx-category"></i> Kategori
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-4">
-                            <i class="bx bx-money"></i> Pendapatan
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-4">
-                            <i class="bx bx-user-pin"></i> Kasir
-                        </a>
-                    </li>
-
-                </ul>
-
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Muhammad Yunus Almeida
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end mt-2">
-                            <li><a class="dropdown-item" href="#">Setting</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Log Out</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
+            <!-- Navbar links dihilangkan saat proses Edit -->
         </div>
     </nav>
 
